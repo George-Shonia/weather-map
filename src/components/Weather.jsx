@@ -37,16 +37,16 @@ const Weather = () => {
           <button>search</button>
         </form>
         <div className={classes['weather-info']}>
-          <h3>Weather in {weatherInfo.name}</h3>
+          <h3>Weather in {weatherInfo.name ? weatherInfo.name : '...'}</h3>
           <h1>{weatherInfo.main && weatherInfo.main.temp + " °C "}</h1>
           <div className={classes['image-div']}>
-            <img
+           { weatherInfo.weather && weatherInfo.weather[0].icon && <img
               src={`https://openweathermap.org/img/wn/${
                 weatherInfo.weather && weatherInfo.weather[0].icon
               }@2x.png`}
               alt=""
               style={{ width: "50px", height: "50px" }}
-            />
+            />}
             <p>{weatherInfo.weather && weatherInfo.weather[0].description}</p>
           </div>
           <p>Humidity: {weatherInfo.main && weatherInfo.main.humidity + "%"}</p>

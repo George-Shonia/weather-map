@@ -6,10 +6,11 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 70px;
-        background-color: gray;
+        background: linear-gradient(to right, #add8e6, #ffffff);
         border-radius: 15px;
         gap: 50px;
         font-size: large;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         form {
             display: flex;
             align-items: center;
@@ -17,13 +18,29 @@
             input {
                 width: 200px;
                 padding: 7px;
+                border: 1px solid #3498db;
                 border-radius: 15px;
-                border: 1px solid gray;
+                background-color: #ecf0f1;
+                transition: all 0.3s ease;
+
+                &:hover,
+                &:focus {
+                    border-color: #2980b9;
+                    background-color: #dfe6e9;
+                }
             }
             button {
                 padding: 7px;
                 border-radius: 15px;
-                border: 1px solid gray;
+                border: none;
+                background: linear-gradient(to right, #3498db, #2c3e50); /* Gradient background */
+                color: #ffffff; /* Text color */
+                cursor: pointer;
+                transition: background 0.3s ease;
+
+                &:hover {
+                    background: linear-gradient(to right, #2980b9, #34495e); /* Change gradient on hover */
+                }
             }
         }
         .weather-info {
